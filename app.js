@@ -1,18 +1,15 @@
-angular.module('starter', [])
-.controller("MainCtrl", ['$scope', '$rootScope', function ($scope, $rootScope) {
-  $scope.hi = "greetings";
+angular.module('starter', ['ngRoute', 'starter.controllers'])
+.config(['$routeProvider',
+   function($routeProvider) {
+     $routeProvider.
+       when('/todo', {
+         templateUrl: 'templates/todos.html',
+         controller: 'TodoCtrl',
+         controller: 'ExampleController'
+       }).
+       otherwise({
+         redirectTo: '/todo'
+       });
 }])
-.controller("TodoCtrl", ['$scope', function ($scope) {
-	$scope.todos = [{title : 'pay rent'}, {title : 'bake a cake'}, {title : 'buy a new shirt'}];
 
-	$scope.delete = function(todo){
-		var index = $scope.todos.indexOf(todo);
-		$scope.todos.splice(index, 1);
-	};
 
-	$scope.newTodo = {title : ""};
-	$scope.addNewTodo=function(){
-		$scope.todos.push({title: $scope.newTodo.title});
-	}
-
-}])
