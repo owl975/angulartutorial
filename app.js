@@ -7,6 +7,10 @@ angular.module('starter', ['ngRoute', 'starter.controllers'])
          controller: 'TodoCtrl',
          controller: 'ExampleController'
        }).
+       when('/about-us', {
+       	  templateUrl: 'templates/about-us.html',
+
+       }).
        otherwise({
          redirectTo: '/todo'
        });
