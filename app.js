@@ -11,6 +11,11 @@ angular.module('starter', ['ngRoute', 'starter.controllers'])
        	  templateUrl: 'templates/about-us.html',
 
        }).
+       when('/lists', {
+       	  templateUrl: 'templates/list-index.html',
+       	  controller: 'ListIndexCtrl',
+
+       }).
        otherwise({
          redirectTo: '/todo'
        });

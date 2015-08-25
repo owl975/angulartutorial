@@ -37,4 +37,25 @@ angular.module('starter.controllers', [])
           		$scope.text = '';
 
       }
+    }])
+ .controller('ListIndexCtrl', ['$scope', function($scope) {
+      $scope.stuff = [{thing: "list 1"}, {thing: "list 2"}];
+     
+ 	  $scope.delete = function(stuff){
+		var index = $scope.stuff.indexOf(stuff);
+		$scope.stuff.splice(index, 1);
+		};
+
+
+      $scope.newStuff={thing : ""};
+
+     
+
+      $scope.submit = function() {
+        
+        		console.log($scope.newStuff.thing);
+        		$scope.stuff.push({thing: $scope.newStuff.thing});
+          		$scope.text = '';
+
+      }
     }]);

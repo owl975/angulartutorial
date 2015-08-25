@@ -1,0 +1,12 @@
+<form ng-submit="submit()" ng-controller="ListIndexCtrl">
+				<h2>Create a new List!</h2>
+ 				Enter text and hit enter (form version):
+  				<input type="text" ng-model="newStuff.thing" required/><span class="error" ng-show="myForm.input.$error.required">Required!</span><br>{{newStuff.thing}}
+  				<input type="submit" id="submit" value="TodoList (form)" />
+  				<ul>
+  					<li ng-repeat="stuff in stuff">
+  						<p><input type="checkbox" ng-model="todo.done"/><span class="done-{{todo.done}}">{{stuff.thing}}</span></p>
+  						<button ng-click="delete(stuff)">Delete stuff</button>
+  					</li>
+				</ul>
+			</form>
